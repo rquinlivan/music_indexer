@@ -102,7 +102,6 @@ def index(search_path, database):
     )
   """)
   for mf in music_files:
-    print(f"mf = {mf}")
     sql = f"""
       insert into music_files
       (title, artist, album, album_artist, track_number, full_path, length)
@@ -116,7 +115,6 @@ def index(search_path, database):
         {mf.length}
       )
     """
-    print(f"Going to run query {sql}")
     conn.execute(sql)
   conn.commit()
   conn.close()
